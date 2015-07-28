@@ -1,0 +1,53 @@
+<section>
+    <h2>A couple of Alternatives</h2>
+
+    <div class="fragment">
+        <img class="fragment" style="width: 383px; float: left;" src="./assets/imgs/01-jade.svg">
+        <img class="fragment" style="width: 383px; float: right;" src="./assets/imgs/01-angular.png">
+    </div>
+
+    <div class="fragment">
+        <h5>Worthy mentions investigated</h5>
+        <img style="border: none; box-shadow: none; background: none; width: 40%; margin-left: 5%; float: left;" src="./assets/imgs/01-backbone.png">
+        <img style="border: none; box-shadow: none; background: none; width: 40%; margin-left: 5%; float: left;" src="./assets/imgs/01-ember.png">
+        <img style="border: none; box-shadow: none; background: none; width: 40%; margin-left: 5%; float: left;" src="./assets/imgs/01-knockout.png">
+        <img style="border: none; box-shadow: none; background: none; width: 40%; margin-left: 5%; float: left;" src="./assets/imgs/01-meteor.png">
+    </div>
+
+    <aside class="notes">
+        <ul>
+            <li>
+                Jade
+                <ul>
+                    <li>the templating language was first implemented (just before react) as the first step to cleaning up our templates.</li>
+                    <li>The idea being we'd focus closer to the relevant parts of the dom we need to manipulate</li>
+                    <li>Skip reprinting existing doms</li>
+                    <li>Problems
+                        <ul>
+                            <li>New markup to learn (I still didn't get my hands too dirty with it)</li>
+                            <li>Required us to calculate what was, and wasn't needed on the page</li>
+                            <li>Was dreadfully convoluted when it came to updating existing dom when events details updated (location x/y update but not whom scored etc.)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Angular
+                <ul>
+                    <li>AngularJS, google's "what HTML would have been"</li>
+                    <li>Clean templates</li>
+                    <li>Excelled in repeating items with ng-repeat</li>
+                    <li>Directives great point for code reuse</li>
+                    <li>Problems
+                        <ul>
+                            <li>Would have required a rewrite of nearly 100% (Their directives/modules/services/factories)</li>
+                            <li>AT THE TIME - Still reprinted the dom. (pre v2.0)</li>
+                            <li>Was personally concerned with imminent v2 launch, changed apis, community very aggressive</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>Backbone, ember, knockout, meteor</li>
+        </ul>
+    </aside>
+</section>

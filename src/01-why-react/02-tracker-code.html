@@ -1,0 +1,82 @@
+<section>
+    <h2>Source (<i>just</i> &nbsp;for the containers)</h2>
+
+<pre style="font-size: 0.25em;"><code data-trim>
+html: function (opt) {
+
+    var className = '',
+        headertext = opt.headertext || 'Match Tracker';
+
+    if (opt.header === 'false') {
+        className = ' fscsw-no-header';
+    }
+
+    var strHTML = '';
+
+    strHTML =   '<div class="fscsw fscsw-match-tracker-module' + className + '">' +
+                    '<div class="fscsw-module">'+
+                        '<div class="fscsw-module-header">';
+
+                        if (opt.header !== 'false') {
+        strHTML +=          '<h3 class="fscsw-heading">'+ headertext +'</h3>';
+                        }
+
+        strHTML +=      '</div>' +
+                        '<div class="fscsw-module-border">' +
+                            '<div class="fscsw-module-content">' +
+                                '<div class="fscsw-squad-list fscsw-home-squad fscsw-scroll-pane" rel="home"><div class="fscsw-squad-container"></div></div>' +
+                                '<div class="fscsw-player-lightbox fscsw-home-lightbox"></div>' +
+                                '<div class="fscsw-tracker-mid-section">' +
+                                    '<div class="fscsw-tabbed-module fscsw-match-tracker-tabs">' +
+                                        '<div class="fscsw-tabs">' +
+                                            '<div class="fscsw-tab-nav">' +
+                                                '<ul class="fscsw-ui-tabs-nav fscsw-ui-tabs-nav-two">' +
+                                                    '<li class="fscsw-formations-tab fscsw-active-tab"><a href="#fscsw-formations"><span class="fscsw-heading-title fscsw-title-formation">Formation</span><span class="fscsw-heading-icon fscsw-icon-formation"></span></a></li>' +
+                                                    '<li class="fscsw-events-tab"><a href="#fscsw-play-by-play-events"><span class="fscsw-heading-title fscsw-title-events">Events</span><span class="fscsw-heading-icon fscsw-icon-events"></span></a></li>' +
+                                                '</ul>' +
+                                            '</div>' +
+                                            '<div id="fscsw-formations" class="fscsw-ui-tabs-panel">' +
+                                                '<div class="fscsw-field-players-home fscsw-field-players-'+ opt.home.id +'"></div>' +
+                                                '<div class="fscsw-field-players-away fscsw-field-players-'+ opt.away.id +'"></div>' +
+                                            '</div>' +
+                                            '<div id="fscsw-play-by-play-events" class="fscsw-ui-tabs-panel fscsw-hidden">' +
+                                                '<div class="fscsw-event-items"></div>' +
+                                                '<div class="fscsw-event-filter">' +
+                                                    '<ul>' +
+                                                        '<li><a rel="fscsw-event-goal" class="fscsw-filter-item-on">Goals</a></li>' +
+                                                        '<li><a rel="fscsw-event-shot" class="fscsw-filter-item-on">On Target</a></li>' +
+                                                        '<li><a rel="fscsw-event-mshot" class="fscsw-filter-item-on">Off Target</a></li>' +
+                                                        '<li><a rel="fscsw-event-bshot" class="fscsw-filter-item-on">Shots Blocked</a></li>' +
+                                                        '<li><a rel="fscsw-event-flcon" class="fscsw-filter-item-on">Fouls</a></li>' +
+                                                    '</ul>' +
+                                                '</div>' +
+                                            '</div>' +
+                                        '</div>'+
+                                    '</div>'+
+                                    '<div class="fscsw-possession-bar"></div>'+
+                                    '</div>'+
+                                '<div class="fscsw-player-lightbox fscsw-away-lightbox"></div>' +
+                                '<div class="fscsw-squad-list fscsw-away-squad fscsw-scroll-pane" rel="away"><div class="fscsw-squad-container"></div></div>' +
+                            '</div>'+
+                        '</div>';
+                        if (opt.syndicate === 'true') {
+        strHTML +=      '<div class="fscsw-foxsports-logo">Supplied by</div>';
+                        }
+
+    strHTML +=      '</div>'+
+                '</div>';
+
+    return strHTML;
+},
+</code></pre>
+
+    <aside class="notes">
+        <ul>
+            <li>This is source for JUST the html containers</li>
+            <li>jQuery dump to page, api polled, then internals emptyed, and the dom recreated for udpates</li>
+            <li>Over 3000 DOM Node</li>
+            <li>Calculate position of new event and place to dom - 164 lines </li>
+            <li>So apart from being completely unmanagable.....</li>
+        </ul>
+    </aside>
+</section>

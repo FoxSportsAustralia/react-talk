@@ -1,0 +1,36 @@
+<section>
+    <h2>SO <strong>SLOW!</strong></h2>
+    <img src="./assets/imgs/01-pre-react.png">
+
+    <div class="fragment">
+        <h5 style="text-align:left;">Results in</h5>
+        <ul>
+            <li>No visible events/content up to 2s</li>
+            <li>DOM 'LockUp' up to 2s</li>
+            <li>Flash on the same page made it worse...</li>
+            <li>Huge Memory use (left over event listeners so easy)</li>
+        </ul>
+    </div>
+
+    <aside class="notes">
+        <ul>
+            <li>every 15-30 seconds
+                <ul>
+                    <li>content would disappear</li>
+                    <li>Between 500ms and 2s for events to come back to the page</li>
+                    <li>ON FAST COMPUTERS - flash wasn't as noticable but DOM 'Lockup' (can't click, can't hover, can't scroll!!!!!) for up to 2s</li>
+                    <li>With flash advertising on the page (where process priority focus to that) - up to twice as long</li>
+                    <li>Attached dom eventlisteners - were not always cleaned up</li>
+                    <li>As the match goes on, the heavy dom dumping/repopulating would take.</li>
+                </ul>
+            </li>
+
+            <li></li>
+            <li>was not the only 'widget' - scorecentre caused similar lock ups</li>
+            <li></li>
+
+            <li>So we knew we needed to change _something_</li>
+            <li>To us, it was fairly obvious were we were coming up short in speed (heavy dom minipulation)</li>
+        </ul>
+    </aside>
+</section>

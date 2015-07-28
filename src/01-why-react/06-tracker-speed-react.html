@@ -1,0 +1,32 @@
+<section style="margin-top: -50px;">
+    <h2>SO <strong>FAST!</strong></h2>
+    <img src="./assets/imgs/01-post-react.png">
+
+    <div class="fragment">
+        <ul>
+            <li>Javascript Heap reduced by 36%</li>
+            <li>DOM Updated as Required <strong>in under 10ms</strong></li>
+            <li>No flashes of events / No DOM 'Lockups'</li>
+            <li>Flash on the same page made was no issue</li>
+            <li>Reduced DOM Node Count by half (so about 1500 end of match)</li>
+            <li>Never a left over event handler on changes</li>
+        </ul>
+    </div>
+
+    <aside class="notes">
+        <ul>
+            <li>every 15-30 seconds
+                <ul>
+                    <li>Overall used memory was down 36%</li>
+                    <li>Memory used on updates reduced by up to 10 times (completed in under 10ms)</li>
+                    <li>Attached dom eventlisteners - were not always cleaned up</li>
+                    <li>DOM elementes reduced drastically because we no longer required data attributes (which was a hack to start with)</li>
+                    <li>As the match goes on, diff time was consistent throughout.</li>
+                    <li></li>
+                    <li>Events updated in the past were updated when we were told they updated (position x/y, etc.) without us doing anything</li>
+                    <li>We kept the _exact_ same output on the screen.</li>
+                </ul>
+            </li>
+        </ul>
+    </aside>
+</section>

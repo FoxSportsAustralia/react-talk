@@ -1,0 +1,68 @@
+<section>
+    <h2>Our First React Component (View)</h2>
+
+<pre style="font-size: 0.45em;"><code data-trim>
+fscsw.components.matchtracker = React.createClass({displayName: 'Match Tracker',
+    render: function() {
+        return (
+            React.DOM.div(null,
+                React.DOM.div(
+                    null,
+                    fscsw.components.tabs({
+                        activeTab: self.props.activeTab,
+                        tabs: this.props.tabs,
+                        onClick: function(clickedId) {
+                            self.props.onTabChange(clickedId);
+                        }
+                    })
+                ),
+                React.DOM.div(
+                    {className: 'fscsw-tracker-border'},
+                    React.DOM.div(
+                        null,
+                        React.DOM.div(
+                            {className: classesFormation},
+                            fscsw.components.matchtrackerFormation({
+                                homeTeamId    : this.props.homeTeamId,
+                                homeFormation : this.props.formation.homeFormation,
+                                awayTeamId    : this.props.awayTeamId,
+                                awayFormation : this.props.formation.awayFormation,
+
+                                fieldImage : this.props.fieldImage,
+
+                                selectedPlayerId      : this.props.formationSelectedPlayer,
+                                onFormationClick      : this.props.onFormationClick,
+                                onFormationMouseEnter : this.props.onFormationMouseEnter,
+                                onFormationMouseLeave : this.props.onFormationMouseLeave
+                            })
+                        ),
+                        React.DOM.div(
+                            {className: classesEvents},
+                            fscsw.components.matchtrackerEvents({
+                                fieldImage   : this.props.fieldImage,
+                                filterEvents : this.props.filterEvents,
+                                events       : this.props.events
+                            })
+                        )
+                    )
+                ),
+                React.DOM.div(
+                    {className: 'fscsw-possession-border'},
+                    React.DOM.div(null, fscsw.components.matchtrackerPossession({possession: this.props.possession}))
+                )
+            )
+
+        );
+    }
+});
+</code></pre>
+
+    <aside class="notes">
+        <ul>
+            <li>Majority of the code here is now data structure</li>
+            <li>We throw event onClicks to the controller (callbacks)</li>
+            <li>Kept the same data structure (polling 15-30s) (no rewrites there)</li>
+            <li>The 'layout', also includes sub-components</li>
+        </ul>
+    </aside>
+</section>
