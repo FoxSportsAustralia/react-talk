@@ -1,0 +1,27 @@
+<section>
+    <h2>What's React?<br><small>Super quick, honest</small></h2>
+
+<pre><code data-trim>
+var HelloMessage = React.createClass({displayName: "HelloMessage",
+  render: function() {
+    return React.createElement("div", null, "Hello ", this.props.name);
+  }
+});
+React.render(React.createElement(HelloMessage, {name: "John"}), mountNode);
+</code></pre>
+
+<code><pre>
+Hello John
+</pre></code>
+
+    <aside class="notes">
+        <p>
+            React Real Quick for those that don't know what it is (from facebook):<br>
+            JUST THE UI<br>
+            Lots of people use React as the V in MVC. Since React makes no assumptions about the rest of your technology stack, it's easy to try it out on a small feature in an existing project.<br>
+            <br>
+            React abstracts away the DOM from you.<br>
+            React implements one-way reactive data flow (vs two-way typical in most 'View' stacks)<br>
+        </p>
+    </aside>
+</section>

@@ -1,0 +1,33 @@
+<section>
+    <h3>Data Streams</h3>
+    <h4>Bacon.JS! <small>Who doesn't like bacon...</small></h4>
+
+    <p>
+        <a target="_blank" href="http://media.foxsports.com.au/stats/technology/resources/fe/fscsw-motorsports/dist/docs/results.html">
+            Checkout some MotoGP Results
+        </a>
+    </p>
+
+<pre class="fragment"><code data-trim>
+var selectedSessionResults = selectedSession
+    .flatMapLatest(function (session) {
+        return dataStreams.results(session.id, freq);
+    }.bind(this))
+    .mapError(function () {
+        return [];
+    });
+</code></pre>
+
+
+    <aside class="notes">
+        <ul>
+            <li>Data abstraction made it crazy easy to replace polling with pushed data</li>
+            <li>Everything became 'stream' based (user events pushed into streams)</li>
+            <li>Streams would change/update based on other streams (Filter for current race, would change route for 'results')</li>
+
+            <li>OPEN LINK</li>
+
+            <li>Show stupid easy code.</li>
+        </ul>
+    </aside>
+</section>
