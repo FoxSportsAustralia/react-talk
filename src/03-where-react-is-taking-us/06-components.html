@@ -1,10 +1,34 @@
 <section>
-    <h2></h2>
-    <h3 class="fragment"></h3>
+    <h2>Components</h2>
+
+    <pre style="font-size: 0.4em;"><code>
+        module.exports = createClass({
+            render: function () {
+                return dom.div(
+                    {
+                        className: 'fscswm-profile-image'
+                    },
+                    dom.div(
+                        {
+                            className: 'fscswm-profile-image__logo',
+                            style: {
+                                backgroundImage: sprintf(
+                                    'url(%s)',
+                                    this.props.logoSrc
+                                )
+                            }
+                        }
+                    )
+                );
+            }
+        });
+    </code></pre>
 
     <aside class="notes">
         <ul>
-            <li></li>
+            <li>React JS has a concept of building your code as independant components.</li>
+            <li>Components are reusable pieces of code that can be required and used in other components.</li>
+            <li>Don't Repeat Yourself</li>
         </ul>
     </aside>
 </section>

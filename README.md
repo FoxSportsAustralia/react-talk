@@ -5,4 +5,4 @@ npm install
 grunt
 ```
 
-Open up index.hmtl under /dist
+Open up index.html under /dist
