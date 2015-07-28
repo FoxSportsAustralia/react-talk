@@ -1,9 +1,26 @@
 <section>
     <h2>How does React Do This?<br><small>Crazy high level</small></h2>
 
+    <img style="margin-top: -10px; border: none; background: white; padding: 30px;" src="./assets/imgs/01-should-component-update.png">
+    <p>
+        <a href="https://facebook.github.io/react/docs/reconciliation.html">Source Facebook React Reconciliation</a>
+    </p>
+
     <aside class="notes">
         <ul>
+            <li>From your first component - data is checked against the previous data the component had (reconciliation).</li>
+            <li>If it's changed, run the component render process - and compare this virtual dom with the last virtual dom.</li>
+            <li>When a change is detected, a diff is calculated between both the previous virtual dom and the new calculated virtual dom of the component</li>
+            <li>These diffs are then applied - Can be as simple as 'element.classList.add('className');</li>
+            <li>Will calculate if DOM nodes can be reused/repurposed, or if it's quicker to simply remove and replace</li>
 
+            <li></li>
+
+            <li>With sub-components, parent containers will always have had a reconciliation difference. They may not have had a virtual dom difference</li>
+            <li>Calculating this every 100ms (against motorsports for example), is trivial for browsers</li>
+
+            <li>Wouldn't it be slow calling all the components render methods?</li>
+            <li>Nope, last match-tracker profile proved that, it's DOM manipulations that are slow.</li>
         </ul>
     </aside>
 </section>
