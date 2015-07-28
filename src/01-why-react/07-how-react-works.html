@@ -8,19 +8,18 @@
 
     <aside class="notes">
         <ul>
-            <li>From your first component - data is checked against the previous data the component had (reconciliation).</li>
-            <li>If it's changed, run the component render process - and compare this virtual dom with the last virtual dom.</li>
-            <li>When a change is detected, a diff is calculated between both the previous virtual dom and the new calculated virtual dom of the component</li>
-            <li>These diffs are then applied - Can be as simple as 'element.classList.add('className');</li>
+            <li>From your first main component - data is checked against the previous data the component had.</li>
+            <li>If it's changed, run the component render process - and compare this virtual dom output with the last virtual dom output. (reconciliation)</li>
+            <li>When a change is detected, a DOM changes diff is calculated between both the previous virtual dom and the new calculated virtual dom of the component</li>
+            <li>These DOM change diffs are then applied - Can be as simple as 'element.classList.add('className');</li>
             <li>Will calculate if DOM nodes can be reused/repurposed, or if it's quicker to simply remove and replace</li>
 
             <li></li>
 
-            <li>With sub-components, parent containers will always have had a reconciliation difference. They may not have had a virtual dom difference</li>
+            <li>With sub-components, parent containers will always have had a reconciliation difference in data that will trigger the child component.</li>
             <li>Calculating this every 100ms (against motorsports for example), is trivial for browsers</li>
 
-            <li>Wouldn't it be slow calling all the components render methods?</li>
-            <li>Nope, last match-tracker profile proved that, it's DOM manipulations that are slow.</li>
+            <li>This is not slow, last match-tracker profile proved that, it's DOM manipulations that are slow.</li>
         </ul>
     </aside>
 </section>
