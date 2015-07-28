@@ -1,0 +1,59 @@
+<section style="padding: 0;">
+    <h3 style="">React Component Life-cycle (D3 Magics)</h3>
+
+<pre style="font-size:0.40em; width:100%;"><code style="max-height: 650px;" data-trim>
+module.exports = createClass({displayName: 'Telemetry - RPM',
+    render: function () {
+        var endAngle = (this.props.engineRpm / this.props.maxRpm) * 2 * Math.PI;
+        this.innerRadius = this.props.cx - this.props.arcWidth;
+        this.outerRadius = this.props.cx;
+
+        return dom.div({className: 'fscswm-telemetry__chart-rpm'},
+            dom.svg(
+                {width: this.props.width, height: this.props.height},
+                dom.path(
+                    {d: this.getArc(endAngle), transform: 'translate(' + this.props.cx + ',' + this.props.cy + ')'}
+                )
+            )
+        );
+    },
+
+    getArc: function (endAngle) { /* Karuna Fancy Math */ },
+
+    shouldComponentUpdate: function (props) {
+        // If the properties haven't changed, bugger off.
+        if (isEqual(this.props, props)) {
+            return false;
+        }
+
+        this.d3Path
+            .transition()
+            .duration(this.props.animationDuration)
+            .ease('circle-in')
+            .attrTween('d', this.arcTween(this.props, props));
+
+        return false;
+    },
+
+    arcTween: function (start, finish) { /* More Karuna Fancy Math */ }
+});
+</code></pre>
+
+<a class="fragment" target="_blank" href="http://www.foxsports.com.au/motor-sport/v8-supercars/race-centre?meetingid=2&fscswm-sessionid=35&fscswm-state=live-race&fscswm-version=dev">Demo Link</a>
+
+    <aside class="notes">
+        <ul>
+            <li>Component Lifecycle (we don't use more than 4 out of 8 provided)</li>
+            <li> - componentWillMount</li>
+            <li> - componentDidMount (manual dom eventListeners or init 3rd party)</li>
+            <li> - componentWillReceiveProps</li>
+            <li> - shouldComponentUpdate (Does this component need to update? We'll handle the logic here, defaults to diff between new properties)</li>
+            <li> - componentWillUpdate</li>
+            <li> - render (How reconciliation of dom happens)</li>
+            <li> - componentDidUpdate</li>
+            <li> - componentWillUnmount (Clean up manual dom eventListeners, destroy 3rd party scripts)</li>
+        </ul>
+        <p>Whincup Telemetry</p>
+        <code>node src/js-node/push-mock.js leaderboard 35 -t 740</code>
+    </aside>
+</section>
