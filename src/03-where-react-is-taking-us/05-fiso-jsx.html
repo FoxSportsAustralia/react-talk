@@ -1,10 +1,49 @@
 <section>
-    <h2></h2>
-    <h3 class="fragment"></h3>
+    <h2>React with JSX</h2>
+
+    <div class="fragment">
+        <div style="display:inline-block;">
+            <h3>JSX</h3>
+            <pre style="font-size: 0.4em;"><code>
+                class LeaguePreTile extends React.Component {
+                    render() {
+                        return (
+                            <li key={uniqueKey} className="fiso-scoreboard-tile fiso-scoreboard-tile--event">
+                                <EventTileComponent {...event} sport={normalisedSport} />
+                            </li>
+                        );
+                    }
+                }
+
+                module.exports = LeaguePreTile;
+            </code></pre>
+        </div>
+
+        <div style="display:inline-block;">
+            <h3>Compiled JS</h3>
+            <pre style="font-size: 0.4em;"><code>
+                module.exports = createClass({
+                    render: function () {
+                        return dom.a(
+                            {
+                                href: '#'
+                            },
+                            'League!'
+                        );
+                    }
+                });
+            </code></pre>
+        </div>
+    </div>
 
     <aside class="notes">
         <ul>
-            <li></li>
+            <li>Ditched DOM elements/compiled React JS in favour of JSX</li>
+            <li>Easier to use</li>
+            <li>More flexible</li>
+            <li>Easier to understand with less lines of code</li>
+            <li>More documentation out there</li>
+            <li>More supported by community</li>
         </ul>
     </aside>
 </section>

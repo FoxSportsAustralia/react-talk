@@ -2,26 +2,18 @@
     <h2>Components</h2>
 
     <pre style="font-size: 0.4em;"><code>
-        module.exports = createClass({
-            render: function () {
-                return dom.div(
-                    {
-                        className: 'fscswm-profile-image'
-                    },
-                    dom.div(
-                        {
-                            className: 'fscswm-profile-image__logo',
-                            style: {
-                                backgroundImage: sprintf(
-                                    'url(%s)',
-                                    this.props.logoSrc
-                                )
-                            }
-                        }
-                    )
+        var React = require('react');
+        class LeaguePreTile extends React.Component {
+            render() {
+                return (
+                    <li key={uniqueKey} className="fiso-scoreboard-tile fiso-scoreboard-tile--event">
+                        <EventTileComponent {...event} sport={normalisedSport} />
+                    </li>
                 );
             }
-        });
+        }
+
+        module.exports = LeaguePreTile;
     </code></pre>
 
     <aside class="notes">
